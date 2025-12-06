@@ -1,0 +1,96 @@
+Diabetes Prediction using Machine Learning
+
+A complete end-to-end ML pipeline with EDA, feature engineering, model training, evaluation, and visual insights.
+
+ Project Overview
+
+This project builds a Machine Learning model to predict diabetes based on lifestyle, demographic, and medical variables.
+Using the BRFSS diabetes dataset (≈250K samples), the workflow includes:
+
+Exploratory Data Analysis (EDA)
+Outlier handling & feature transformations
+Encoding categorical data
+Train–test splitting with stratification
+Model comparison (Logistic Regression, Random Forest, Gradient Boosting)
+Final model selection (Gradient Boosting)
+Model evaluation using Accuracy, F1 Score, ROC-AUC
+Visual proof plots and feature importance charts
+Saving the final ML model for deployment
+
+ Dataset
+
+Size: 253,680 rows × 23 features
+Target variable: Diabetes_binary
+Key feature groups:
+
+Health indicators (BMI, BP, cholesterol, mental/physical health days)
+Lifestyle choices (smoking, alcohol, fruits/veggies intake)
+Physical activity & difficulty walking
+Demographic variables (age group, education, income)
+Gender
+
+Exploratory Data Analysis (EDA)
+
+ Distribution analysis using histograms
+ Outlier detection using boxplots
+ Categorical feature counts
+ Correlation heatmap
+ Feature transformation (log1p) for highly skewed features
+ Standardization for health variables
+
+Visual EDA confirms that:
+
+BMI, MentHlth, PhysHlth are highly skewed
+GenHlth and Age show strong patterns with diabetes
+Some extreme BMI and health-day outliers exist
+Most users are middle-aged, educated, and higher-income
+
+ Feature Engineering
+
+Log transformation on skewed fields: BMI, MentHlth, PhysHlth
+Standard scaling for numeric variables
+One-hot encoding for Education, Income, and Sex
+Removed unnecessary fields like ID
+
+ Model Building
+
+Three models were trained and compared:
+
+                    |  Model	Accuracy	  F1-Score	ROC-AUC
+Logistic Regression	|  0.86	              0.25	    0.82
+Random Forest      	|  0.86	              0.25	    0.79
+Gradient Boosting 	|  0.865    	        0.263	    0.827
+
+ Gradient Boosting was selected as the final model
+— stable, high accuracy, and best ROC-AUC.
+
+ Visual Proofs
+
+This project includes multiple visual insights, such as:
+
+Actual vs Predicted comparison
+Confusion Matrix heatmap
+ROC Curve
+Feature Importance Plot
+Distribution and outlier charts for all major variables
+
+ Key Insights
+
+General Health (GenHlth) is the most important predictor.
+High Blood Pressure and High Cholesterol significantly influence diabetes.
+BMI and Age provide moderate predictive power.
+Many demographic and education-related features contribute very little.
+
+ Conclusion
+
+The project delivers a robust baseline ML model with strong ROC-AUC performance.
+Gradient Boosting provides interpretable and stable predictions, suitable as a first version of a medical risk assessment tool.
+
+ Future Enhancements
+
+ SMOTE/oversampling for class imbalance
+ Hyperparameter tuning (GridSearch/Optuna)
+ Try advanced models (XGBoost, LightGBM, CatBoost)
+ SHAP/LIME explainability integration
+ Deploy using Flask/Django API
+✔ Build interactive web UI for real-time predictions
