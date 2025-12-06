@@ -1,0 +1,17 @@
+Project Summary
+
+This project builds an end-to-end machine learning pipeline to predict diabetes using health, lifestyle, and demographic factors. The workflow includes data cleaning, exploratory data analysis (EDA), transformation of skewed variables, feature engineering, model training, model comparison, and final selection of the Gradient Boosting Classifier based on accuracy, F1-score, and ROC-AUC.
+Visualizations such as histograms, boxplots, correlation heatmaps, and confusion matrices help validate data patterns and model performance.
+
+Notes
+
+The dataset contains 253,680 samples and 23 features with no missing or duplicate values.
+Several numeric features (BMI, MentHlth, PhysHlth) were highly skewed, requiring log transformation.
+Features like GenHlth, HighBP, Age, and BMI were the strongest predictors of diabetes.
+Gradient Boosting delivered the best performance:
+  Accuracy: ~86.4%
+  F1-Score: ~0.26
+  ROC-AUC: ~0.83
+The model performs very well for class 0 (non-diabetic) but has moderate performance on class 1 due to class imbalance.
+Visual proofs include distribution plots, boxplots, correlation heatmap, feature importance bar charts, and confusion matrix.
+The project concludes with final predictions added to the dataset and the model saved for deployment.
